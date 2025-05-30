@@ -1,0 +1,523 @@
+{
+  "tables": [
+    {
+      "ratings": {
+        "actual_rating": {
+          "description": "실제 발생한 RATING 값을 계산합니다. 이 값은 반드시 actual_rating_query을 그대로 사용해 도출합니다."
+        },
+        "expected_rating": {
+          "description": "예상되는 RATING 값을 계산합니다.이 값은 반드시 expected_rating을 그대로 사용해 도출합니다."
+        }
+      }
+    },
+    {
+      "database_name": "HIQ1_B",
+      "table_name": "HCOB_CAL",
+      "table_korean_name": "날짜 공통",
+      "table_type": "일반",
+      "description": "공통용 Calendar 테이블",
+      "note": "공통테이블",
+      "columns": [
+        {
+          "column_name": "FISCAL_DAY",
+          "column_korean_name": "일반 달력 일자",
+          "data_type": "VARCHAR2",
+          "length": 8,
+          "key_type": "PK",
+          "data_sample": "20051101",
+          "description": "일반 달력 일자"
+        },
+        {
+          "column_name": "PLAN_YEAR",
+          "column_korean_name": "일반 달력 년도",
+          "data_type": "VARCHAR2",
+          "length": 4,
+          "key_type": "NX",
+          "data_sample": "2005",
+          "description": "일반 달력 년도"
+        },
+        {
+          "column_name": "PLAN_HALF",
+          "column_korean_name": "일반 달력 반기",
+          "data_type": "VARCHAR2",
+          "length": 6,
+          "key_type": "NX",
+          "data_sample": "04",
+          "description": "일반 달력 반기"
+        },
+        {
+          "column_name": "PLAN_QUARTER",
+          "column_korean_name": "일반 달력 분기",
+          "data_type": "VARCHAR2",
+          "length": 6,
+          "key_type": "NX",
+          "data_sample": "200504",
+          "description": "일반 달력 분기"
+        },
+        {
+          "column_name": "PLAN_MONTH",
+          "column_korean_name": "일반 달력 년월",
+          "data_type": "VARCHAR2",
+          "length": 6,
+          "key_type": "NX",
+          "data_sample": "200511",
+          "description": "일반 달력 년월"
+        },
+        {
+          "column_name": "JULIAN_DAY",
+          "column_korean_name": "일반 달력 년별 누적 일수",
+          "data_type": "NUMBER",
+          "length": 5,
+          "key_type": "NX",
+          "data_sample": "305",
+          "description": "일반 달력 년별 누적 일수"
+        },
+        {
+          "column_name": "FISCAL_WEEK",
+          "column_korean_name": "일반 달력 주차",
+          "data_type": "VARCHAR2",
+          "length": 6,
+          "key_type": "NX",
+          "data_sample": "200545",
+          "description": "일반 달력 주차 : 1월 1일 부터 1주차 (일요일 ~ 토요일)"
+        },
+        {
+          "column_name": "PLAN_WEEK",
+          "column_korean_name": "제조(PNT) 실적 주차",
+          "data_type": "VARCHAR2",
+          "length": 6,
+          "key_type": "NX",
+          "data_sample": "200544",
+          "description": "제조(PNT) 실적 주차 (일요일 ~ 토요일)"
+        },
+        {
+          "column_name": "WEEK_DAY",
+          "column_korean_name": "제조(PNT) 실적 주차 누적 일수",
+          "data_type": "NUMBER",
+          "length": 5,
+          "key_type": "NX",
+          "data_sample": "3",
+          "description": "제조(PNT) 실적 주차 누적 일수"
+        },
+        {
+          "column_name": "CAL_GRP1",
+          "column_korean_name": "제조(PNT) 달력 그룹 1",
+          "data_type": "VARCHAR2",
+          "length": 50,
+          "key_type": "NX",
+          "data_sample": "A",
+          "description": "제조(PNT) 달력 그룹 1 (A,B,C,H,O 값 관리)"
+        },
+        {
+          "column_name": "CAL_GRP2",
+          "column_korean_name": "제조(PNT) 달력 그룹 2",
+          "data_type": "VARCHAR2",
+          "length": 50,
+          "key_type": "NX",
+          "data_sample": "0",
+          "description": "제조(PNT) 달력 그룹 2 (A,B,C,H,O 값 관리)"
+        },
+        {
+          "column_name": "CAL_GRP3",
+          "column_korean_name": "제조(PNT) 달력 그룹 3",
+          "data_type": "VARCHAR2",
+          "length": 50,
+          "key_type": "NX",
+          "data_sample": "B",
+          "description": "제조(PNT) 달력 그룹 3 (A,B,C,H,O 값 관리)"
+        },
+        {
+          "column_name": "CAL_GRP4",
+          "column_korean_name": "제조(PNT) 달력 그룹 4",
+          "data_type": "VARCHAR2",
+          "length": 50,
+          "key_type": "NX",
+          "data_sample": "C",
+          "description": "제조(PNT) 달력 그룹 4 (A,B,C,H,O 값 관리)"
+        },
+        {
+          "column_name": "CRE_PGM_TYP",
+          "column_korean_name": "생성 유형",
+          "data_type": "VARCHAR2",
+          "length": 50,
+          "key_type": "NX",
+          "data_sample": "ETL",
+          "description": "생성 유형 (ETL / EAI / UI)"
+        },
+        {
+          "column_name": "CRE_PGM_NM",
+          "column_korean_name": "생성 프로그램 명",
+          "data_type": "VARCHAR2",
+          "length": 200,
+          "key_type": "NX",
+          "data_sample": "SP_ETL_HCOB_CAL",
+          "description": "생성 프로그램 명"
+        },
+        {
+          "column_name": "FST_CREATOR_ID",
+          "column_korean_name": "최초 생성자 ID",
+          "data_type": "VARCHAR2",
+          "length": 100,
+          "key_type": "NX",
+          "data_sample": "SAP DS",
+          "description": "최초 생성자 ID"
+        },
+        {
+          "column_name": "FST_CRE_DTTM",
+          "column_korean_name": "최초 생성 일시",
+          "data_type": "VARCHAR2",
+          "length": 14,
+          "key_type": "NX",
+          "data_sample": "20231212083551",
+          "description": "최초 생성 일시"
+        },
+        {
+          "column_name": "LAST_MDFYR_ID",
+          "column_korean_name": "최종 수정자 ID",
+          "data_type": "VARCHAR2",
+          "length": 100,
+          "key_type": "NX",
+          "data_sample": "SAP DS",
+          "description": "최종 수정자 ID"
+        },
+        {
+          "column_name": "LAST_MDFY_DTTM",
+          "column_korean_name": "최종 수정 일시",
+          "data_type": "VARCHAR2",
+          "length": 14,
+          "key_type": "NX",
+          "data_sample": "20231212083551",
+          "description": "최종 수정 일시"
+        }
+      ]
+    },
+    {
+      "database_name": "HIQ1_B",
+      "table_name": "HCOB_COMM_CD_N",
+      "table_korean_name": "공통코드 테이블",
+      "table_type": "일반",
+      "description": "공통 코드 테이블",
+      "note": "공통테이블",
+      "columns": [
+        {
+          "column_name": "COMM_CD_DIV",
+          "column_korean_name": "공통 코드 구분",
+          "data_type": "일반",
+          "length": null,
+          "key_type": "PK",
+          "data_sample": "COM_20004",
+          "description": "공통 코드 구분"
+        },
+        {
+          "column_name": "COMM_CD",
+          "column_korean_name": "공통 코드",
+          "data_type": "일반",
+          "length": null,
+          "key_type": "PK",
+          "data_sample": "209",
+          "description": "공통 코드"
+        },
+        {
+          "column_name": "USE_YN",
+          "column_korean_name": "사용 여부",
+          "data_type": "일반",
+          "length": null,
+          "key_type": "NX",
+          "data_sample": "Y",
+          "description": "사용 여부"
+        },
+        {
+          "column_name": "GMDM_CD_YN",
+          "column_korean_name": "G-MDM 코드 여부",
+          "data_type": "일반",
+          "length": null,
+          "key_type": "NX",
+          "data_sample": null,
+          "description": "G-MDM 코드 여부"
+        }
+      ]
+    },
+    {
+      "database_name": "HIQ1_C",
+      "table_name": "QMS_GBW_VIEW",
+      "table_korean_name": "품질지표용 GBW VIEW",
+      "table_type": "일반",
+      "description": "품질지표에서 사용하기위해서 GBW에서 제공하는 데이터를 정제하여 저장한 테이블",
+      "note": "",
+      "columns": [
+        {
+          "column_name": "PLAN_QUARTER",
+          "column_korean_name": "분기",
+          "data_type": "VARCHAR2",
+          "length": 20,
+          "key_type": "PK1",
+          "data_sample": "202001",
+          "description": "분기"
+        },
+        {
+          "column_name": "HIQ1_APP_CD",
+          "column_korean_name": "HiQ1 Application 코드",
+          "data_type": "VARCHAR2",
+          "length": 20,
+          "key_type": "PK2",
+          "data_sample": "HBM",
+          "description": "HiQ1 Application 코드"
+        },
+        {
+          "column_name": "HIQ1_CUST_CD",
+          "column_korean_name": "HiQ1 고객 코드",
+          "data_type": "VARCHAR2",
+          "length": 20,
+          "key_type": "PK3",
+          "data_sample": "G669",
+          "description": "HiQ1 고객 코드"
+        },
+        {
+          "column_name": "AMT",
+          "column_korean_name": "매출액",
+          "data_type": "NUMBER",
+          "length": null,
+          "key_type": "NX",
+          "data_sample": "4852611",
+          "description": "매출액"
+        },
+        {
+          "column_name": "ACTUAL",
+          "column_korean_name": "실적",
+          "data_type": "VARCHAR2",
+          "length": 20,
+          "key_type": "NX",
+          "data_sample": "3",
+          "description": "실적"
+        },
+        {
+          "column_name": "SCORE",
+          "column_korean_name": "실적 Score",
+          "data_type": "VARCHAR2",
+          "length": 20,
+          "key_type": "NX",
+          "data_sample": "80",
+          "description": "실적 Score"
+        },
+        {
+          "column_name": "MAX_SCORE",
+          "column_korean_name": "만점 Score",
+          "data_type": "VARCHAR2",
+          "length": 20,
+          "key_type": "NX",
+          "data_sample": null,
+          "description": "만점 Score"
+        }
+      ]
+    },
+    {
+      "database_name": "HIQ1_C",
+      "table_name": "QMS_RAT_CUST",
+      "table_korean_name": "Rating 관리 고객",
+      "table_type": "일반",
+      "description": "Rating 관리 고객",
+      "note": "",
+      "columns": [
+        {
+          "column_name": "HIQ1_CUST_CD",
+          "column_korean_name": "HiQ1 고객 코드",
+          "data_type": "VARCHAR2",
+          "length": 20,
+          "key_type": "PK1",
+          "data_sample": "G113",
+          "description": "HiQ1 고객 코드"
+        },
+        {
+          "column_name": "HIQ1_APP_CD",
+          "column_korean_name": "HiQ1 Application 코드",
+          "data_type": "VARCHAR2",
+          "length": 20,
+          "key_type": "PK2",
+          "data_sample": "SERVER",
+          "description": "HiQ1 Application 코드"
+        },
+        {
+          "column_name": "APP_CD",
+          "column_korean_name": "Application 코드",
+          "data_type": "VARCHAR2",
+          "length": 200,
+          "key_type": "PK3",
+          "data_sample": "SV",
+          "description": "Application 코드"
+        },
+        {
+          "column_name": "MODE_GRP",
+          "column_korean_name": "Mode Group",
+          "data_type": "VARCHAR2",
+          "length": 20,
+          "key_type": "NX",
+          "data_sample": "CUQ_00004",
+          "description": "Mode Group"
+        },
+        {
+          "column_name": "USE_YN",
+          "column_korean_name": "사용 여부",
+          "data_type": "VARCHAR2",
+          "length": 20,
+          "key_type": "NX",
+          "data_sample": "Y",
+          "description": "사용 여부"
+        },
+        {
+          "column_name": "LAST_MDFY_DT",
+          "column_korean_name": "최종변경일",
+          "data_type": "DATE",
+          "length": null,
+          "key_type": "NX",
+          "data_sample": "2025-01-09 08:17:32.000",
+          "description": "최종변경일"
+        },
+        {
+          "column_name": "LAST_MDFY_ID",
+          "column_korean_name": "최종변경자",
+          "data_type": "VARCHAR2",
+          "length": 20,
+          "key_type": "NX",
+          "data_sample": "2050853",
+          "description": "최종변경자"
+        },
+        {
+          "column_name": "MEMO",
+          "column_korean_name": "메모",
+          "data_type": "CLOB",
+          "length": null,
+          "key_type": "NX",
+          "data_sample": null,
+          "description": "메모"
+        }
+      ]
+    },
+    {
+      "database_name": "HIQ1_C",
+      "table_name": "QMS_RAT_YMQT_N",
+      "table_korean_name": "Rating 분기별 데이터",
+      "table_type": "일반",
+      "description": "Rating Application, 고객, 분기별 실적 등의 데이터 테이블",
+      "note": "",
+      "columns": [
+        {
+          "column_name": "HIQ1_APP_CD",
+          "column_korean_name": "HiQ1 Application 코드",
+          "data_type": "VARCHAR2",
+          "length": 20,
+          "key_type": "PK1",
+          "data_sample": "CLIENT",
+          "description": "HiQ1 Application 코드"
+        },
+        {
+          "column_name": "HIQ1_CUST_CD",
+          "column_korean_name": "HiQ1 고객 코드",
+          "data_type": "VARCHAR2",
+          "length": 20,
+          "key_type": "PK2",
+          "data_sample": "G010",
+          "description": "HiQ1 고객 코드",
+          "customer_mapping": {
+            "G100": "CISCO",
+            "GG00": "HK HONOR",
+            "G113": "GOOGLE",
+            "G731": "OPPO",
+            "GG85": "METAX",
+            "G150": "APPLE",
+            "G932": "AMAZON",
+            "GF53": "HONOR",
+            "G118": "HUAWEI",
+            "GA35": "HPE",
+            "GG31": "META",
+            "G980": "FACEBOOK",
+            "GC26": "VIVO",
+            "G160": "LENOVO INT",
+            "G021": "ACER",
+            "G163": "MICROSOFT",
+            "0000011977": "MICROSOFT",
+            "G010": "HP INC",
+            "GA04": "SIE",
+            "G959": "XIAOMI",
+            "G669": "AMD",
+            "G361": "LENOVO",
+            "GA89": "PHISON",
+            "G020": "DELL",
+            "GD67": "BYTEDANCE"
+          }
+        },
+        {
+          "column_name": "YM_QT",
+          "column_korean_name": "년월 분기",
+          "data_type": "VARCHAR2",
+          "length": 20,
+          "key_type": "PK3",
+          "data_sample": "202404",
+          "description": "년월 분기"
+        },
+        {
+          "column_name": "REVENUE",
+          "column_korean_name": "목표",
+          "data_type": "VARCHAR2",
+          "length": 20,
+          "key_type": "NX",
+          "data_sample": "2",
+          "description": "목표"
+        },
+        {
+          "column_name": "FORECAST",
+          "column_korean_name": "예측",
+          "data_type": "VARCHAR2",
+          "length": 20,
+          "key_type": "NX",
+          "data_sample": "2",
+          "description": "예측"
+        },
+        {
+          "column_name": "ACTUAL",
+          "column_korean_name": "실적",
+          "data_type": "VARCHAR2",
+          "length": 20,
+          "key_type": "NX",
+          "data_sample": "2",
+          "description": "실적"
+        },
+        {
+          "column_name": "SCORE",
+          "column_korean_name": "실적 Score",
+          "data_type": "VARCHAR2",
+          "length": 20,
+          "key_type": "NX",
+          "data_sample": "64",
+          "description": "실적 Score"
+        },
+        {
+          "column_name": "FILE_GROUP_ID",
+          "column_korean_name": "첨부파일 그룹 ID",
+          "data_type": "VARCHAR2",
+          "length": 50,
+          "key_type": "NX",
+          "data_sample": "9C54D46F-3F2A-4D6A-5636-1FE53EFE461F",
+          "description": "첨부파일 그룹 ID"
+        },
+        {
+          "column_name": "FILE_UPLOAD_USER",
+          "column_korean_name": "첨부파일 업로더 유저",
+          "data_type": "VARCHAR2",
+          "length": 20,
+          "key_type": "NX",
+          "data_sample": "2012853",
+          "description": "첨부파일 업로더 유저"
+        },
+        {
+          "column_name": "EXPECTED_DATE",
+          "column_korean_name": "접수예정일",
+          "data_type": "DATE",
+          "length": null,
+          "key_type": "NX",
+          "data_sample": "2025-03-04 00:00:00.000",
+          "description": "접수예정일"
+        }
+      ]
+    }
+  ]
+}
